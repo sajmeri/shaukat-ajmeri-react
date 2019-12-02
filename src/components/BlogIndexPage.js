@@ -8,13 +8,22 @@ import styles from './BlogIndexPage.module.css'
 
 function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
   return (
-    <div>
+    <div>      
       <header>
         <h1 className={styles.title}>
           <Link href={blogRoot}>{siteMetadata.title}</Link>
         </h1>
-        <Bio />
+       
       </header>
+      <div>
+        <Link href="/">Home</Link> &bull; 
+        <Link href="/blog">Blog</Link> &bull;
+        <Link href="/about">About</Link> &bull; 
+        <Link href="/tags">Tags</Link>{' '}
+          &bull;{' '}  
+          
+      </div>
+      <Bio />
       <ul className={styles.articlesList}>
         {postRoutes.map(route => (
           <li key={route.url.href}>
@@ -36,7 +45,7 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
           </a>
           <Link href="/about">About</Link> &bull; <Link href="/tags">Tags</Link>{' '}
           &bull;{' '}
-          <a href="https://github.com/frontarm/create-react-blog">Source</a>
+         
         </div>
       </footer>
     </div>

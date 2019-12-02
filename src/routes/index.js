@@ -82,7 +82,7 @@ const routes = compose(
     // The blog's index pages go here. The first index page is mapped to the
     // root URL, with a redirect from "/page/1". Subsequent index pages are
     // mapped to "/page/n".
-    '/': chunkPagePairs.shift()[1],
+    '/blog': chunkPagePairs.shift()[1],
     '/page': mount({
       '/1': redirect((req, context) => context.blogRoot),
       ...fromPairs(chunkPagePairs),
@@ -100,6 +100,7 @@ const routes = compose(
     // Miscellaneous pages can be added directly to the root switch.
     '/tags': lazy(() => import('./tags')),
     '/about': lazy(() => import('./about')),
+    '/': lazy(() => import('./home')),
 
     // Only the statically built copy of the RSS feed is intended to be opened,
     // but the route is defined here so that the static renderer will pick it

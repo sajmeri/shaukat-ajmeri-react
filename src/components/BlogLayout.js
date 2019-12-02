@@ -18,14 +18,21 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
       <LoadingIndicator active={!!loadingRoute} />
 
       {// Don't show the header on index pages, as it has a special header.
-      !isViewingIndex && (
+      // !isViewingIndex && (
         <header>
           <h3 className={styles.title}>
             <Link href={blogRoot}>{siteMetadata.title}</Link>
           </h3>
         </header>
-      )}
-
+      // )
+      }
+      <div>
+        <Link href="/">Home</Link> &bull; 
+        <Link href="/blog">Blog</Link> &bull;
+        <Link href="/about">About</Link> &bull; 
+        <Link href="/tags">Tags</Link>{' '}
+          &bull;{' '}          
+      </div>
       <main>
         <NotFoundBoundary render={() => <NotFoundPage />}>
           <View />
