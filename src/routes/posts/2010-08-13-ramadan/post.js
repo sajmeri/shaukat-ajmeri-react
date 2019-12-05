@@ -1,6 +1,6 @@
 export default {
   title: `Ramadan, iftaar and nostalgia`,
   // tags: ['Shaukat', 'blog', 'Eid'],
-  spoiler: "Why would one write poetry, I don’t know. Why would one write anything at all, I don’t know. This much I know that we humans are a creative bunch. We create things, invent things. We just can’t help it. Without this innate, ancient urge to create I wonder where would we be today. But then, with the creative yin comes the destructive yang.",
+  spoiler: "During the Cold War American presidents had a handy way to manipulate the masses. All they had to do was cry out “the Russians are coming, the Russians are coming” and the gullible Americans would be spooked out of their wits. Similarly, there is a way to spook the Muslims? No, it’s not “the Americans are coming”, although that is more terrifyingly true than one can imagine.",
   getContent: () => import('./document.mdx'),
 }
