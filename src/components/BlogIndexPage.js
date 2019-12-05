@@ -9,7 +9,7 @@ import styles from './BlogIndexPage.module.css'
 function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
   return (
     <div>      
-      <header>
+      {/* <header>
         <h1 className={styles.title}>
           <Link href={blogRoot}>{siteMetadata.title}</Link>
         </h1>
@@ -22,8 +22,8 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
         <Link href="/tags">Tags</Link>{' '}
           &bull;{' '}  
           
-      </div>
-      <Bio />
+      </div> */}
+      {/* <Bio /> */}
       <ul className={styles.articlesList}>
         {postRoutes.map(route => (
           <li key={route.url.href}>
@@ -38,7 +38,7 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
           pageNumber={pageNumber}
         />
       )}
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <div>
           <a href="/rss.xml" target="_blank" style={{ float: 'right' }}>
             RSS
@@ -47,7 +47,7 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
           &bull;{' '}
          
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }

@@ -21,16 +21,17 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
       // !isViewingIndex && (
         <header>
           <h3 className={styles.title}>
-            <Link href={blogRoot}>{siteMetadata.title}</Link>
+            <Link href="/">{siteMetadata.title}</Link>
           </h3>
         </header>
       // )
       }
       <div>
-        <Link href="/">Home</Link> &bull; 
+        {/* <Link href="/">Home</Link> &bull;  */}
         <Link href="/blog">Blog</Link> &bull;
         <Link href="/about">About</Link> &bull; 
-        <Link href="/tags">Tags</Link>{' '}
+        {/* <Link href="/tags">Tags</Link>{' '} */}
+        <Link href="/about">Contact</Link> &bull; 
           &bull;{' '}          
       </div>
       <main>
@@ -38,6 +39,14 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
           <View />
         </NotFoundBoundary>
       </main>
+      <footer className={styles.footer}>
+        <div>        
+          <Link href="/blog">Blog</Link> &bull;
+          <Link href="/about">About</Link> &bull; 
+          {/* <Link href="/tags">Tags</Link>{' '} */}
+          <Link href="/about">Contact</Link> &bull; 
+        </div>
+      </footer>
     </div>
   )
 }
