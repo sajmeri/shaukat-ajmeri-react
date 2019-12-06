@@ -33,7 +33,7 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
         <Link href="/book">Book</Link> &bull; 
         <Link href="/about">About</Link> &bull; 
         {/* <Link href="/tags">Tags</Link>{' '} */}
-        <Link href="/about">Contact</Link> &bull;          
+        <Link href="/contact">Contact</Link> &bull;          
       </div>
       <main>
         <NotFoundBoundary render={() => <NotFoundPage />}>
@@ -47,7 +47,7 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
           <Link href="/book">Book</Link> &bull; 
           <Link href="/about">About</Link> &bull; 
           {/* <Link href="/tags">Tags</Link>{' '} */}
-          <Link href="/about">Contact</Link> &bull; 
+          <Link href="/contact">Contact</Link> &bull; 
         </div>
       </footer>
     </div>
