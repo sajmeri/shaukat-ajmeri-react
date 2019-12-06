@@ -17,6 +17,8 @@ import BlogLayout from '../components/BlogLayout'
 import BlogPostLayout from '../components/BlogPostLayout'
 import siteMetadata from '../siteMetadata'
 import posts from './posts'
+import articles from './articles'
+import book from './book'
 
 // Split the posts into a list of chunks of the given size, and
 // then build index pages for each chunk.
@@ -63,6 +65,49 @@ let chunkPagePairs = chunks.map((chunk, i) => [
   }),
 ])
 
+let artileChunks = chunk(articles, siteMetadata.indexPageSize)
+let chunkArticlePagePairs = artileChunks.map((chunk, i) => [
+  '/' + (i + 1),
+  map(async (req, context) => {
+    // Don't load anything when just crawling
+    if (req.method === 'HEAD') {
+      return route()
+    }
+
+    // Get metadata for all pages on this page
+    let articleRoutes = await Promise.all(
+      chunk.map(async article => {
+        let href = join(context.blogRoot, 'articles', article.slug)
+        return await resolve({
+          // If you want to show the page content on the index page, set
+          // this to 'GET' to be able to access it.
+          method: 'HEAD',
+          routes,
+          url: href,
+        })
+      }),
+    )
+
+    // Only add a page number to the page title after the first index page.
+    let pageTitle = siteMetadata.title
+    if (i > 0) {
+      pageTitle += ` – page ${i + 1}`
+    }
+
+    return route({
+      title: pageTitle,
+      view: (
+        <BlogIndexPage
+          blogRoot={context.blogRoot}
+          pageNumber={i + 1}
+          pageCount={artileChunks.length}
+          postRoutes={articleRoutes}
+        />
+      ),
+    })
+  }),
+])
+
 const routes = compose(
   withContext((req, context) => ({
     ...context,
@@ -97,9 +142,27 @@ const routes = compose(
       mount(fromPairs(posts.map(post => ['/' + post.slug, post.getPage]))),
     ),
 
+     // The Article's index pages go here. The first index page is mapped to the
+    // root URL, with a redirect from "/articlePage/1". Subsequent index pages are
+    // mapped to "/page/n".
+    '/articleList': chunkArticlePagePairs.shift()[1],
+    '/articlePage': mount({
+      '/1': redirect((req, context) => context.blogRoot),
+      ...fromPairs(chunkArticlePagePairs),
+    }),
+
+    // Put articles under "/articles", so that they can be wrapped with a
+    // "<BlogPostLayout />" that configures MDX and adds a post-specific layout.
+    '/articles': compose(
+      withView((req, context) => (
+        <BlogPostLayout blogRoot={context.blogRoot} />
+      )),
+      mount(fromPairs(articles.map(article => ['/' + article.slug, article.getPage]))),
+    ),
     // Miscellaneous pages can be added directly to the root switch.
     '/tags': lazy(() => import('./tags')),
     '/about': lazy(() => import('./about')),
+    '/book': lazy(() => import('./book')),
     '/': lazy(() => import('./home')),
 
     // Only the statically built copy of the RSS feed is intended to be opened,

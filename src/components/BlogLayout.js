@@ -29,10 +29,11 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
       <div>
         {/* <Link href="/">Home</Link> &bull;  */}
         <Link href="/blog">Blog</Link> &bull;
+        <Link href="/articleList">Articles</Link> &bull;
+        <Link href="/book">Book</Link> &bull; 
         <Link href="/about">About</Link> &bull; 
         {/* <Link href="/tags">Tags</Link>{' '} */}
-        <Link href="/about">Contact</Link> &bull; 
-          &bull;{' '}          
+        <Link href="/about">Contact</Link> &bull;          
       </div>
       <main>
         <NotFoundBoundary render={() => <NotFoundPage />}>
@@ -42,6 +43,8 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
       <footer className={styles.footer}>
         <div>        
           <Link href="/blog">Blog</Link> &bull;
+          <Link href="/articleList">Articles</Link> &bull; 
+          <Link href="/book">Book</Link> &bull; 
           <Link href="/about">About</Link> &bull; 
           {/* <Link href="/tags">Tags</Link>{' '} */}
           <Link href="/about">Contact</Link> &bull; 

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-navi'
 import siteMetadata from '../siteMetadata'
 import ArticleSummary from './ArticleSummary'
-import Bio from './Bio'
+// import Bio from './Bio'
 import Pagination from './Pagination'
 import styles from './BlogIndexPage.module.css'
 
