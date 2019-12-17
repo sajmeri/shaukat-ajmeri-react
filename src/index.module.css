@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900|Montserrat:900');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900|Montserrat:900|Girassol
+');
 
 :root {
-  --primary-color: #d23669;
-  --primary-color-light: rgb(255, 167, 196);
+  --primary-color: #296297;
+  --primary-color-light: rgb(116, 123, 170);
+  --header-color: rgb(215, 242, 248);
 }
 
 :global * {
@@ -11,7 +13,7 @@
 
 :global html {
   color: rgba(0, 0, 0, 0.9);
-  font: 100%/1.75 Morriweather, Georgia, serif;
+  font: 100%/1.75 Merriweather, Georgia, serif;
 }
 
 :global body {
