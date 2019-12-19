@@ -4,7 +4,8 @@ import { MDXProvider } from '@mdx-js/react'
 import siteMetadata from '../siteMetadata'
 import ArticleMeta from './ArticleMeta'
 import Bio from './Bio'
-import styles from './BlogPostLayout.module.css'
+// import styles from './BlogPostLayout.module.css'
+import styles from './Styles.module.css'
 
 function BlogPostLayout({ blogRoot }) {
   let { title, data, url } = useCurrentRoute()
@@ -18,8 +19,8 @@ function BlogPostLayout({ blogRoot }) {
     <>
       {head}
       <article className={styles.container}>
-        <header className={styles.header}>
-          <h1 className={styles.title}>
+        <div>
+          <h1>
             <Link href={url.pathname}>{title}</Link>
           </h1>
           <ArticleMeta
@@ -27,7 +28,7 @@ function BlogPostLayout({ blogRoot }) {
             meta={data}
             readingTime={readingTime}
           />
-        </header>
+        </div>
         <MDXProvider components={{
           a: Link,
           wrapper: ({ children }) =>

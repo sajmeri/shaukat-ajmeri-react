@@ -4,7 +4,8 @@ import siteMetadata from '../siteMetadata'
 import ArticleSummary from './ArticleSummary'
 // import Bio from './Bio'
 import Pagination from './Pagination'
-import styles from './BlogIndexPage.module.css'
+// import styles from './BlogIndexPage.module.css'
+import styles from './Styles.module.css'
 
 function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
   return (

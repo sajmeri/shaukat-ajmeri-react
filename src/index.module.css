@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900|Montserrat:900|Girassol
-');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900|Montserrat:200,300,400,500,600,700,800|Playfair+Display:400,400i,700,700i,900|Roboto:100,300,400,500,700,900&display=swap');
 
 :root {
-  --primary-color: #296297;
-  --primary-color-light: rgb(116, 123, 170);
-  --header-color: rgb(215, 242, 248);
+  --primary-color: #434547;
+  --accent-color: rgb(204, 76, 119);
+  --header-color: rgb(192, 217, 221);
+  --link-color: rgb(30, 138, 226);
+  --grey-color: rgb(209, 204, 204);
 }
 
 :global * {
@@ -12,8 +13,8 @@
 }
 
 :global html {
-  color: rgba(0, 0, 0, 0.9);
-  font: 100%/1.75 Merriweather, Georgia, serif;
+  color: var(--primary-color);
+  font: 16px/1.750 Merriweather, Georgia, serif;
 }
 
 :global body {
@@ -39,7 +40,7 @@
 }
 
 :global a {
-  color: var(--primary-color);
+  color: var(--link-color);
 }
 :global a:hover {
   text-decoration: none;

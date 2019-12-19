@@ -1,25 +1,66 @@
-.title {
-  font-family: Montserrat, sans-serif;
-  font-weight: 900;
+/* BloglayoutModule */
+
+.container {
+  margin: 0 auto;
+  max-width: 48rem;
+  padding: .5rem 1.3125rem;
+}
+
+.masthead {
+  margin: 0 auto;
+  max-width: 100%;
+  background: var(--header-color);
+}
+nav {
+  margin-top: 1rem;
+  display: flex;
+}
+nav a {
+  font-family: Montserra, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: .9rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 2rem;
+  letter-spacing: .06rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+}
+nav a:hover {
+border-bottom: 1px solid var(--primary-color);
+}
+ /* */
+
+/* .title {
+  font-family: Merriweahter Sans, sans-serif;
+  font-weight: 400;
   line-height: 1.1;
   text-rendering: optimizeLegibility;
+} */
+/* .title > a {
+  text-decoration: none;
+} */
+
+.masthead {
+  margin-bottom: 2.4rem;  
 }
-.title > a {
+.masthead .title {
+  font-family: Montserrat, Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-top: .5rem;
+  margin-bottom: 0;
+}
+.masthead .title > a {
+  color: black;
   text-decoration: none;
 }
 
-.header {
-  margin-bottom: 2.4rem;  
+.heading{
+  border: 1px solid blue;
 }
-.header .title {
-  font-size: 2.5rem;
-  margin-top: 1.7rem;
-  margin-bottom: 0;
-}
-.header .title > a {
-  color: black;
-}
-
 .footer {
   /* margin-top: 7rem; */
   margin: 0 auto;
@@ -54,51 +95,19 @@
   border: none;
   height: 1px;
 }
-
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
-  font-weight: 900;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Playfair Display, Georgia, serif; 
+  font-weight: 400;
   line-height: 1.1;
   margin-top: 3.5rem;
   text-rendering: optimizeLegibility;
 }
   
-/**
-* Based on copypasta from Remy Bach and Sarah Drasner
-*/
-.content code,
-.content pre {
-  color: white;
-  font-family: Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;
-  font-feature-settings: normal;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  tab-size: 4;
-  hyphens: none;
-}
-  
-/* Code blocks */
-.content pre {
-  overflow: auto;
-  padding: 1em;
-}
-
-.content :not(pre) > code,
-.content pre {
-  background: hsla(0,0%,0%,0.9);
-}
-  
-.content pre::-moz-selection,
-.content pre::selection {
-  background: hsl(207, 4%, 16%);
-}
   
 /* Text Selection colour */
 .content pre::-moz-selection,
@@ -124,6 +133,36 @@
 .content a > code {
   color: var(--primary-color);
 }
+
+
+/* Blog index page */
+
+
+.articlesList,
+.articlesList > li {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.625rem;;
+}
+
+.ArticleSummary h2 {
+ font-family: Playfair Display, Georgia, serif;
+ font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  margin-top: 0;
+}
+
+.ArticleSummary a {
+  text-decoration: none;
+  color: var(--primary-color)
+}
+article small, .Pagination a {
+  font-family: Roboto, Montserrat,sans-serif;
+  color: var(--accent-color)
+}
+
+/*styles from original css*/
 
 .content :global(.highlighted-line) {
   background-color: hsla(207, 95%, 15%, 1);
