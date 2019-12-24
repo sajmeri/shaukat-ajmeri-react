@@ -18,10 +18,10 @@ function BlogPostLayout({ blogRoot }) {
   return connect(
     <>
       {head}
-      <article className={styles.container}>
+      <article>
         <div>
           <h1>
-            <Link href={url.pathname}>{title}</Link>
+            {title}
           </h1>
           <ArticleMeta
             blogRoot={blogRoot}

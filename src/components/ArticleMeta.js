@@ -11,9 +11,9 @@ function ArticleMeta({ blogRoot, meta, readingTime }) {
     let cups = Math.round(minutes / 5);
     readingTimeElement =
       <React.Fragment>
-        {' '}&bull;{' '}
+        {' '}&mdash;{' '}
         <span className={styles.readingTime}>
-          {new Array(cups || 1).fill('☕️').join('')} {minutes} min read
+          {new Array(cups || 1).fill('').join('')} {minutes}-minute read
         </span>
       </React.Fragment>
   }

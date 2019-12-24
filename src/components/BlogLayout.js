@@ -36,11 +36,12 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
       </div>
       
       <div className={styles.container}>
-        <main>
+        <div>
           <NotFoundBoundary render={() => <NotFoundPage />}>
             <View />
           </NotFoundBoundary>
-        </main>       
+        </div>
+            
       </div>
       
       <footer className={styles.footer}>

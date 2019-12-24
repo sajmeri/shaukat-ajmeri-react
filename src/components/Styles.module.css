@@ -2,23 +2,23 @@
 
 .container {
   margin: 0 auto;
-  max-width: 48rem;
-  padding: .5rem 1.3125rem;
+  max-width: 44rem;
 }
 
 .masthead {
   margin: 0 auto;
   max-width: 100%;
-  background: var(--header-color);
+  background: #fff;
+  margin-bottom: 2.4rem;  
+  padding: 1rem 0 2rem;
 }
 nav {
   margin-top: 1rem;
-  display: flex;
 }
 nav a {
-  font-family: Montserra, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: .9rem;
+  font-size: .85rem;
   color: var(--primary-color);
   text-decoration: none;
   margin-right: 2rem;
@@ -41,31 +41,29 @@ border-bottom: 1px solid var(--primary-color);
   text-decoration: none;
 } */
 
-.masthead {
-  margin-bottom: 2.4rem;  
-}
 .masthead .title {
-  font-family: Montserrat, Roboto, sans-serif;
-  font-weight: 600;
-  font-size: 1.5rem;
-  letter-spacing: .05em;
+  font-family: Inria Serif, Nova Slim, Roboto, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.7rem;
+  /* letter-spacing: 0.2em; */
   text-transform: uppercase;
   margin-top: .5rem;
   margin-bottom: 0;
 }
 .masthead .title > a {
-  color: black;
+  color: #000;
   text-decoration: none;
 }
 
 .heading{
-  border: 1px solid blue;
 }
 .footer {
   /* margin-top: 7rem; */
   margin: 0 auto;
   max-width: 100%;
   background: var(--header-color);
+  display: flex;
 }
 .footer .title {
   font-size: 1.44rem;
@@ -101,14 +99,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Playfair Display, Georgia, serif; 
+  font-family: Inria Serif, Playfair Display, Georgia, serif; 
   font-weight: 400;
   line-height: 1.1;
   margin-top: 3.5rem;
   text-rendering: optimizeLegibility;
 }
   
-  
+img {
+  max-width: 100%;
+  display: block;
+}
+* { box-sizing: border-box; }
 /* Text Selection colour */
 .content pre::-moz-selection,
 .content pre ::-moz-selection {
@@ -145,21 +147,29 @@ h6 {
   margin: 0 0 2.625rem;;
 }
 
-.ArticleSummary h2 {
- font-family: Playfair Display, Georgia, serif;
- font-size: 2rem;
-  font-weight: 700;
+.ArticleSummary h2, article h1 {
+ font-family:  Inria Serif, Muli, Poppins, Georgia, serif;
+ font-size: 1.7rem;
+  font-weight: 800;
+  /* letter-spacing: .02rem; */
+  /* text-transform: uppercase; */
   margin-bottom: .5rem;
   margin-top: 0;
 }
 
-.ArticleSummary a {
+.ArticleSummary a, article h1 a {
   text-decoration: none;
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 article small, .Pagination a {
-  font-family: Roboto, Montserrat,sans-serif;
-  color: var(--accent-color)
+  font-family: Poppins, Roboto,sans-serif;
+  font-size: .75rem!important;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin: 1rem 0 .5rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
 }
 
 /*styles from original css*/
@@ -233,4 +243,65 @@ article small, .Pagination a {
 
 .content :global(.token.namespace) {
   color: rgb(178, 204, 214);
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 480px) {
+  :global body {
+    font-size: 14px;
+  }
+  
+  .container {
+      padding: 0 1rem;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  body {
+
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  body {
+    
+  }
+}
+
+/** route folder mdx components styles **/
+
+.Document h2 {
+  font-family: Inria Serif, Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+.maincontent {
+  margin: 0 auto;
+  max-width: 48rem;
+  /* padding: .5rem 1.3125rem; */
+  display: flex;
+  flex-wrap: wrap;  
+}
+.leftColumn {
+  margin: 0 auto;
+  max-width: 16rem;
+  padding: .5rem 2rem 0 0;
+}
+.rightColumn {
+  /* margin: 0 auto; */
+  max-width: 28rem;
+  /* padding: 2.625rem 1.3125rem; */
+}
+@media only screen and (max-width: 480px) {
+  .leftColumn {
+      width: 30rem;
+    }
+    .rightColumn {
+      margin-top: 2rem;
+    }
+
 }
