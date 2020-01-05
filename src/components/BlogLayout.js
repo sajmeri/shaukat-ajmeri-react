@@ -25,12 +25,12 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
           </header>        
           <nav>
             {/* <Link href="/">Home</Link> &bull;  */}
+            <Link href="/book">Book</Link>  
+            {/* <Link href="/about">About</Link>  */}
             <Link href="/blog">Blog</Link> 
             <Link href="/articleList">Articles</Link> 
-            <Link href="/book">Book</Link>  
-            <Link href="/about">About</Link> 
             {/* <Link href="/tags">Tags</Link>{' '} */}
-            <Link href="/contact">Contact</Link>          
+            {/* <Link href="/contact">Contact</Link>           */}
           </nav>
         </div>      
       </div>
@@ -44,14 +44,9 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
             
       </div>
       
-      <footer className={styles.footer}>
+      <footer className={styles.mainFooter}>
         <div className={styles.container}>        
-          <Link href="/blog">Blog</Link> &bull;
-          <Link href="/articleList">Articles</Link> &bull; 
-          <Link href="/book">Book</Link> &bull; 
-          <Link href="/about">About</Link> &bull; 
-          {/* <Link href="/tags">Tags</Link>{' '} */}
-          <Link href="/contact">Contact</Link> &bull; 
+        <ul class="social"><li><a target="_blank" href="http://www.facebook.com/" class="Facebook" title="Follow me on Facebook"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x coral"></i><i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i></span></a></li><li><a target="_blank" href="http://twitter.com/yogaspacect" class="Twitter" title="Follow us on Twitter"><span class="fa-stack fa-sm"><i class="fa fa-circle fa-stack-2x coral"></i><i class="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i></span></a></li></ul>
         </div>
       </footer>   
       

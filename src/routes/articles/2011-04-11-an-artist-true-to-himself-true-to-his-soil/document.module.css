@@ -1,0 +1,15 @@
+.Document h1 {
+    /* font-family: Montserrat, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 1.7rem;
+    margin-bottom: 2.4rem;  
+    text-rendering: optimizeLegibility; */
+    font-family: Inria Serif, Georgia, serif; 
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 3.5rem;
+    text-rendering: optimizeLegibility;
+  }
+  
