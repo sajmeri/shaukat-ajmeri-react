@@ -46,7 +46,7 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
       
       <footer className={styles.mainFooter}>
         <div className={styles.container}>        
-        <ul class="social"><li><a target="_blank" href="http://www.facebook.com/" class="Facebook" title="Follow me on Facebook"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x coral"></i><i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i></span></a></li><li><a target="_blank" href="http://twitter.com/yogaspacect" class="Twitter" title="Follow us on Twitter"><span class="fa-stack fa-sm"><i class="fa fa-circle fa-stack-2x coral"></i><i class="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i></span></a></li></ul>
+        <ul className="social"><li><a target="_blank" href="http://www.facebook.com/" className="Facebook" title="Follow me on Facebook"><span className="fa-stack fa-1x"><i className="fa fa-circle fa-stack-2x coral"></i><i className="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i></span></a></li><li><a target="_blank" href="http://twitter.com/yogaspacect" className="Twitter" title="Follow us on Twitter"><span className="fa-stack fa-sm"><i className="fa fa-circle fa-stack-2x coral"></i><i className="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i></span></a></li></ul>
         </div>
       </footer>   
       

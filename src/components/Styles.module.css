@@ -112,23 +112,40 @@ h6 {
   line-height: 1.1;
   margin-top: 3.5rem;
   text-rendering: optimizeLegibility;
-  letter-spacing: -.06rem;
+  letter-spacing: -.05rem;
 }
-  
-img {
-  max-width: 100%;
-  display: block;
+h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  letter-spacing: normal;
 }
 
-img.articleImages {
-  border: 1px solid rgb(0, 255, 149);
+img {
+  max-width: 100%;
 }
+.caption {
+  font-family: Poppins, sans-serif;
+  font-size: .85rem;
+}
+.img {
+  margin: 2rem 0;
+}
+.imgLeft {
+float: left;
+margin: .5rem 2rem .2rem 0;
+display: inline-block;
+}
+.imgRight {
+  float: right;
+  margin: .5rem 0 .2rem 2rem;
+  display: inline-block;
+  }
 
 .cite {
   font-family: Poppins, sans-serif;
   font-size: .9rem;
-  font-style: italic;
-  border: 1px solid orangered;
+  text-align: right;
 }
 
 /* Blog index page */
@@ -143,7 +160,7 @@ img.articleImages {
 
 .ArticleSummary h2, article h1 {
  font-family:  Inria Serif, Muli, Poppins, Georgia, serif;
- font-size: 1.7rem;
+ font-size: 1.85rem;
   font-weight: 800;
   /* letter-spacing: .02rem; */
   /* text-transform: uppercase; */
