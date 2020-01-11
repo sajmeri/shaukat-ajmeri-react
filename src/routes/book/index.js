@@ -1,6 +1,6 @@
 import * as Navi from 'navi'
 
 export default Navi.route({
-  title: "About",
+  title: "Shaukat Ajmeri | Book",
   getView: () => import('./document.mdx'),
 })

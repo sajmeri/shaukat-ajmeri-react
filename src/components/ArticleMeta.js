@@ -5,6 +5,7 @@ import { formatDate } from '../utils/formats'
 import styles from './ArticleMeta.module.css'
 
 function ArticleMeta({ blogRoot, meta, readingTime }) {
+  
   let readingTimeElement
   if (readingTime) {
     let minutes = Math.max(Math.round(readingTime.minutes), 1)

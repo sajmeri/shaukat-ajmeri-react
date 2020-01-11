@@ -9,13 +9,13 @@
   margin: 0 auto;
   max-width: 100%;
   background:var(--black);
-  margin-bottom: 4rem;  
-  padding: 1rem 0 2rem;
+  margin-bottom: 3rem;  
+  padding: 1rem 0 1.5rem;
 }
 nav {
   margin-top: 1rem;
 }
-nav a, .mainFooter a {
+nav a {
   font-family: Poppins, Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-size: .8rem;
@@ -28,6 +28,9 @@ nav a, .mainFooter a {
 }
 nav a:hover {
 border-bottom: 1px solid var(--accent-color);
+}
+.mainFooter ul.social li {
+  display: inline;
 }
  /* */
 
@@ -42,17 +45,17 @@ border-bottom: 1px solid var(--accent-color);
 } */
 
 .masthead .title {
-  font-family: Inria Serif, Nova Slim, Roboto, sans-serif;
-  font-weight: 700;
-  /* font-style: italic; */
-  font-size: 1.7rem;
-  /* letter-spacing: 0.09em; */
-  /* text-transform: uppercase; */
+  font-family: Roboto, Poppins, Inria Serif, serif;
+  font-weight: 100;
+  /* font-style: italic;  */
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   margin-top: .5rem;
   margin-bottom: 0;
 }
 .masthead .title > a {
-  color: var(--white);
+  color: var(--grey);
   text-decoration: none;
 }
 
@@ -64,9 +67,24 @@ border-bottom: 1px solid var(--accent-color);
   padding: 1.5rem 0;
   max-width: 100%;
   background: var(--black);
-  display: flex;
+  color: var(--white);
+  font-family: Roboto, Poppins, sans-serif;
+  letter-spacing: .04rem;
+  font-size: small;
+  font-weight: 200;
 }
-.mainFooter a {
+.mainFooter ul.social {
+  padding: 0;
+}
+.mainFooter ul.social li a {
+  display: inline;
+  margin-right: 1rem;
+}
+.mainFooter ul.social li a i{
+  color: var(--grey);
+  font-size: 1.2rem;
+}
+.mainFooter ul.social li a i:hover{
   color: var(--white);
 }
 .mainFooter .title {
@@ -82,9 +100,9 @@ section.links {
   border-top: 1px dotted var(--grey);
   padding: 2rem 0 0;
 }
-.bio {
+/* .bio {
   margin-bottom: 7rem;
-}
+} */
 
 .links {
   display: flex;
@@ -114,6 +132,16 @@ h6 {
   text-rendering: optimizeLegibility;
   letter-spacing: -.05rem;
 }
+h1.category {
+  font-family: Poppins, sans-serif!important;
+  font-size: 1rem;
+  font-weight: 200;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  border-bottom: 1px dotted var(--grey-light);
+  margin: 1rem 0 2rem 0;
+  padding-bottom: .5rem;
+}
 h4 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -141,11 +169,17 @@ display: inline-block;
   margin: .5rem 0 .2rem 2rem;
   display: inline-block;
   }
-
+  .blurbs {
+    margin-top: 4rem;
+  }
+  .blurbItem {
+    margin-bottom: 2rem;
+  }
 .cite {
   font-family: Poppins, sans-serif;
-  font-size: .9rem;
-  text-align: right;
+  font-size: .8rem;
+  font-weight: 200;
+  margin-top: -0.5rem;
 }
 
 /* Blog index page */
@@ -158,16 +192,18 @@ display: inline-block;
   margin: 0 0 2.625rem;;
 }
 
-.ArticleSummary h2, article h1 {
+.ArticleSummary h2, article h1, h2 {
  font-family:  Inria Serif, Muli, Poppins, Georgia, serif;
- font-size: 1.85rem;
+ font-size: 1.6rem;
   font-weight: 800;
   /* letter-spacing: .02rem; */
   /* text-transform: uppercase; */
-  margin-bottom: .5rem;
+  margin-bottom: 1.2rem;
   margin-top: 0;
 }
-
+article h1 {
+  font-size: 1.8rem;
+} 
 .ArticleSummary a, article h1 a {
   text-decoration: none;
   color: var(--primary-color);
@@ -189,7 +225,6 @@ article small, .Pagination a {
 Button style
 *********/
 ul.buttons {
-  display: inline;
   padding-left: 0;
 }
 
@@ -209,6 +244,7 @@ a.button {
   letter-spacing: .05rem;
 	padding:7px 13px;
   text-decoration:none;
+  border-radius: 5px;
 }
 	
 a.button:hover {
@@ -219,20 +255,49 @@ a.button:active {
 	top:1px;
 }
 
+/** route folder mdx components styles **/
+img.homeCover {
 
+  }
 
+.maincontent {
+  margin: 0 auto;
+  max-width: 48rem;
+  /* padding: .5rem 1.3125rem; */
+  display: flex;
+  flex-wrap: wrap;  
+  margin-bottom: 2rem;
+}
+.leftColumn {
+  margin: 0 auto;
+  max-width: 16rem;
+  padding: .5rem 2rem 0 0;
+}
+.rightColumn {
+  /* margin: 0 auto; */
+  max-width: 28rem;
+  /* padding: 2.625rem 1.3125rem; */
+}
+.panel {
+  border: 1px dotted var(--grey-light);
+  padding: 1rem 1rem 1.2rem;
+  font-size: .9rem;
+}
+.panel img {
+  float: left;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 0 1.5rem 0 0;
+}
 
-
-
-
-
-        
 /* Mobile Styles */
 @media only screen and (max-width: 480px) {
   :global body {
-    font-size: 14px;
   }
-  
+  .ArticleSummary h2, article h1 {
+    font-size: 1.5rem;
+  }
   .container {
       padding: 0 1rem;
     }
@@ -256,49 +321,11 @@ a.button:active {
   }
 }
 
-/** route folder mdx components styles **/
-img.homeCover {
 
-  }
 
-.Document h2 {
-  font-family: Inria Serif, Georgia, serif;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  margin-top: 0;
-}
-.maincontent {
-  margin: 0 auto;
-  max-width: 48rem;
-  /* padding: .5rem 1.3125rem; */
-  display: flex;
-  flex-wrap: wrap;  
-  margin-bottom: 2rem;
-}
-.leftColumn {
-  margin: 0 auto;
-  max-width: 16rem;
-  padding: .5rem 2rem 0 0;
-}
-.rightColumn {
-  /* margin: 0 auto; */
-  max-width: 28rem;
-  /* padding: 2.625rem 1.3125rem; */
-}
-.panel {
-  border: 1px solid var(--grey-light);
-  padding: 1rem 1rem 1.5rem;
-  font-size: .9rem;
-}
-.panel img {
-  float: left;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  margin: 0 1.5rem 0 0;
-}
-@media only screen and (max-width: 480px) {
+
+
+/* @media only screen and (max-width: 480px) {
   .leftColumn {
       width: 30rem;
     }
@@ -308,7 +335,7 @@ img.homeCover {
     nav a {
       margin-right:1rem;
     }
-}
+} */
 
 
 /*styles from original css*/

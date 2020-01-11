@@ -18,7 +18,7 @@ import BlogPostLayout from '../components/BlogPostLayout'
 import siteMetadata from '../siteMetadata'
 import posts from './posts'
 import articles from './articles'
-import book from './book'
+
 
 // Split the posts into a list of chunks of the given size, and
 // then build index pages for each chunk.
@@ -46,10 +46,10 @@ let chunkPagePairs = chunks.map((chunk, i) => [
     )
 
     // Only add a page number to the page title after the first index page.
-    let pageTitle = siteMetadata.title
-    if (i > 0) {
-      pageTitle += ` – page ${i + 1}`
-    }
+    let pageTitle = siteMetadata.title + " - Blog";
+    // if (i > 0) {
+    //   pageTitle += ` – page ${i + 1}`
+    // }
 
     return route({
       title: pageTitle,
@@ -89,10 +89,10 @@ let chunkArticlePagePairs = artileChunks.map((chunk, i) => [
     )
 
     // Only add a page number to the page title after the first index page.
-    let pageTitle = siteMetadata.title
-    if (i > 0) {
-      pageTitle += ` – page ${i + 1}`
-    }
+    let pageTitle = siteMetadata.title + " - Articles";
+    // if (i > 0) {
+    //   pageTitle += ` – page ${i + 1}`
+    // }
 
     return route({
       title: pageTitle,

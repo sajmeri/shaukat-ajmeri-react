@@ -8,9 +8,12 @@ import Pagination from './Pagination'
 import styles from './Styles.module.css'
 
 function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
+  
+  const pageHeadingArray=postRoutes[0].url.pathname.split("/");
+  const category = pageHeadingArray[1]=="articles"  ?"Articles" : "Blog"
   return (
     <div>      
-     
+     <h1 className={styles.category}>{category}</h1>
       {/* <Bio /> */}
       <ul className={styles.articlesList}>
         {postRoutes.map(route => (
