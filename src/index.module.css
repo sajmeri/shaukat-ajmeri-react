@@ -17,14 +17,14 @@
 
 :global html {
   color: var(--black);
-  font: 400 18px/1.750 Inria Serif, Georgia, serif;
+  font-family: Inria Serif, Georgia, serif;
   scroll-behavior: smooth;
   background-color: var(--white);
 }
 
 :global body {
   font-kerning: normal;
-  font: 16px/1.6 Inria Serif, Georgia, serif;
+  font: 17px/1.6 Inria Serif, Georgia, serif;
   font-feature-settings: "kern", "liga", "clig", "calt";
   font-weight: 400;
   margin: 0;

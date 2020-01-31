@@ -1,32 +1,28 @@
 import styles from '../../components/Styles.module.css'
 
 <div className={styles.Document}>
-  <h1 className={styles.category}>Book</h1>
-  <h2>Keepers of the Faith &mdash; due out in April 2020</h2>
+  <h1 className={styles.category}>Book Endorsement</h1>
+  <h2>Priase for Keepers of the Faith</h2>
   <div className={styles.maincontent}>
-    <div className={styles.leftColumn}><img src="/images/keepers-cover-front.jpg" />
+    {/* <div className={styles.leftColumn}><img src="/images/keepers-cover-front.jpg" />
+    </div> */}
+     <div className={styles.blurbs}> 
+    <div className={styles.blurbItem}>
+      <p><em>Keepers of the Faith</em> is an inspiring and provocative novel. In this ambitious work, Shaukat Ajmeri masterfully presents bewildering events with subtlety and nuance. In his lucid style he paints a vivid picture of a people caught between faith and dissent.</p>
+        <p className={styles.cite}> &mdash; Ismail K. Poonawala, Professor Emeritus of Arabic and Islamic Studies, University of California, Los Angeles.</p>
     </div>
-    <div className={styles.rightColumn}>
-      <p><em>Keepers of the Faith</em> is set among the members of a small Muslim sect of India, ruled by an oppressive priesthood that demands absolute submission, while overseeing regressive customs such as wearing the veil, isolating widows, and female circumcision. When a section of the community rebels, the head priest's wrath comes crashing down upon them. In their excommunication, they are shunned by friends and family and denied religious rites such as burials. A peaceful community is split into two.</p>      
-      <p>The novel follows the fates of two teenage lovers who find themselves on opposite sides of the schism. Their dream of a happy life together is shattered and they are forced into separate destinies. Years later, as family man and woman their paths cross again, presenting them with soul-destroying choices.</p>
-      <p>This is the story of a people caught in the grip of blind faith and the terrible price they must pay for standing up for their dignity. Told with compassion and a controlled rage, the story takes the reader on a journey that is as provocative as it is heart-wrenching.</p>
-      <p>Make a pre-order today.</p>
-        <ul className={styles.buttons}>
-          <li><a className={styles.button} target="_blank" href="https://www.amazon.ca/Keepers-Faith-Shaukat-Ajmeri/dp/1988449960/ref=sr_1_1?keywords=shaukat+ajmeri&qid=1577406528&s=books&sr=1-1">Amazon.ca</a></li>
-          <li><a className={styles.button} target="_blank" href="https://www.amazon.com/Keepers-Faith-Shaukat-Ajmeri/dp/1988449960/ref=sr_1_1?keywords=shaukat+ajmeri&qid=1577406528&s=books&sr=1-1">Amazon.com</a></li>
-          {/* <li><a className={styles.button} href="https://www.amazon.com/Keepers-Faith-Shaukat-Ajmeri/dp/1988449960/ref=sr_1_1?keywords=shaukat+ajmeri&qid=1577406528&s=books&sr=1-1">Indie Book Store</a></li> */}
-          </ul>
-    </div>
-  </div>
-  <div className={styles.blurbs}>
-    <h2>Praise for Keepers of the Faith</h2>
     <div className={styles.blurbItem}>
       <p>Ajmeri’s <em>Keepers of the Faith</em> is a breathtaking and brave story about the tyranny of religion, a community at odds with itself and the bonds of love that endure despite oppression. This book is complex, beautiful, and essential reading for our times.</p>
-        <p className={styles.cite}> &mdash; Farzana Doctor, author of <em>Seven</em>.</p>
+        <p className={styles.cite}> &mdash; Farzana Doctor, author of <em>Seven</em></p>
+    </div>
+    <div className={styles.blurbItem}>
+      <p>Shaukat Ajmeri’s soaring debut illuminates in exacting, elegant language how over time even the sustaining powers of faith can corrode the human spirit. Ultimately a profound meditation on family, love and the cost of accepting fate, this memorable novel will linger long in the reader’s mind.</p>
+        <p className={styles.cite}> &mdash; Arif Anwar, author of <em>The Storm</em></p>
     </div>
     <div className={styles.blurbItem}>
        <p>Ajmeri writes with a deep sympathy for his characters and an intimate knowledge of their world. The complication of the plot synchronizes with the characters' development, with the latter subtly growing and maturing in its resolution.</p>
-        <p className={styles.cite}> &mdash; Musharraf Ali Farooqui, author of <em>Between Clay and Dust.</em>.</p>
+        <p className={styles.cite}> &mdash; Musharraf Ali Farooqui, author of <em>Between Clay and Dust</em></p>
     </div>
-  </div> 
+   </div> 
+  </div>
 </div>
