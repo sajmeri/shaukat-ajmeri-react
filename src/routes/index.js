@@ -164,6 +164,7 @@ const routes = compose(
     '/about': lazy(() => import('./about')),
     '/contact': lazy(() => import('./contact')),
     '/book': lazy(() => import('./book')),
+    '/reviews': lazy(() => import('./reviews')),
     '/': lazy(() => import('./home')),
 
     // Only the statically built copy of the RSS feed is intended to be opened,

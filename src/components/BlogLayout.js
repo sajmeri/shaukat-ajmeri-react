@@ -24,9 +24,9 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
             </h3>
           </header>        
           <nav>
-            {/* <Link href="/">Home</Link> &bull;  */}
+            <Link href="/">Home</Link> &bull;  
             <Link href="/book">Book</Link>  
-            {/* <Link href="/about">About</Link>  */}
+            <Link href="/reviews">Reviews</Link> 
             <Link href="/blog">Blog</Link> 
             <Link href="/articleList">Articles</Link> 
             {/* <Link href="/tags">Tags</Link>{' '} */}
