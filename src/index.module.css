@@ -26,7 +26,7 @@
 
 :global body {
     font-kerning: normal;
-    font: 17px/1.6 Inria Serif, Georgia, serif;
+    font: 18px/1.6 Inria Serif, Georgia, serif;
     font-feature-settings: "kern", "liga", "clig", "calt";
     font-weight: 400;
     margin: 0;

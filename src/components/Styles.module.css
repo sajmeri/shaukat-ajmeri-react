@@ -2,12 +2,12 @@
 
 .container {
     margin: 0 auto;
-    max-width: 35rem;
+    max-width: 40rem;
 }
 
 .maincontent {
     margin: 0 auto;
-    max-width: 35rem;
+    max-width: 40rem;
     /* padding: .5rem 1.3125rem; */
     /* display: flex;
     flex-wrap: wrap; */
@@ -232,7 +232,8 @@ img {
     display: inline-block;
 }
 
-hr.spacing {
+hr.spacing,
+.spacing {
     border-top: 1px dotted #afafaf;
     margin: 1rem 0 2rem;
 }
@@ -242,7 +243,21 @@ hr.spacing {
 }
 
 .blurbItem {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.blurbItem::before {
+    font-size: .8rem;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f56b";
+    float: left;
+    margin: .1rem .8rem 0 0;
+    color: var(--accent-color);
 }
 
 .cite {
@@ -283,6 +298,10 @@ article h1 {
 h3 {
     font-size: 1.3rem;
     letter-spacing: .01rem;
+}
+
+h2 a:hover {
+    color: var(--link-color);
 }
 
 .ArticleSummary a,
