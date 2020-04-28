@@ -18,6 +18,7 @@ import BlogPostLayout from '../components/BlogPostLayout'
 import siteMetadata from '../siteMetadata'
 import posts from './posts'
 import articles from './articles'
+import reviews from './reviews'
 
 
 // Split the posts into a list of chunks of the given size, and
@@ -59,6 +60,51 @@ let chunkPagePairs = chunks.map((chunk, i) => [
           pageNumber={i + 1}
           pageCount={chunks.length}
           postRoutes={postRoutes}
+        />
+      ),
+    })
+  }),
+])
+
+// Split the posts into a list of chunks of the given size, and
+// then build index pages for each chunk.
+let chunksReviews = chunk(reviews, siteMetadata.indexPageSize)
+let chunkReviewsPairs = chunksReviews.map((chunk, i) => [
+  '/' + (i + 1),
+  map(async (req, context) => {
+    // Don't load anything when just crawling
+    if (req.method === 'HEAD') {
+      return route()
+    }
+
+    // Get metadata for all pages on this page
+    let reviewRoutes = await Promise.all(
+      chunk.map(async review => {
+        let href = join(context.blogRoot, 'reviews', review.slug)
+        return await resolve({
+          // If you want to show the page content on the index page, set
+          // this to 'GET' to be able to access it.
+          method: 'HEAD',
+          routes,
+          url: href,
+        })
+      }),
+    )
+
+    // Only add a page number to the page title after the first index page.
+    let pageTitle = siteMetadata.title + " - Review";
+    // if (i > 0) {
+    //   pageTitle += ` – page ${i + 1}`
+    // }
+
+    return route({
+      title: pageTitle,
+      view: (
+        <BlogIndexPage
+          blogRoot={context.blogRoot}
+          pageNumber={i + 1}
+          pageCount={chunks.length}
+          postRoutes={reviewRoutes}
         />
       ),
     })
@@ -142,6 +188,24 @@ const routes = compose(
       mount(fromPairs(posts.map(post => ['/' + post.slug, post.getPage]))),
     ),
 
+    // The review's index pages go here. The first index page is mapped to the
+    // root URL, with a redirect from "/page/1". Subsequent index pages are
+    // mapped to "/page/n".
+    '/reviewList': chunkReviewsPairs.shift()[1],
+    '/reviewPage': mount({
+      '/1': redirect((req, context) => context.blogRoot),
+      ...fromPairs(chunkReviewsPairs),
+    }),
+
+    // Put posts under "/posts", so that they can be wrapped with a
+    // "<BlogPostLayout />" that configures MDX and adds a post-specific layout.
+    '/reviews': compose(
+      withView((req, context) => (
+        <BlogPostLayout blogRoot={context.blogRoot} />
+      )),
+      mount(fromPairs(reviews.map(review => ['/' + review.slug, review.getPage]))),
+    ),
+
      // The Article's index pages go here. The first index page is mapped to the
     // root URL, with a redirect from "/articlePage/1". Subsequent index pages are
     // mapped to "/page/n".
@@ -164,7 +228,7 @@ const routes = compose(
     '/about': lazy(() => import('./about')),
     '/contact': lazy(() => import('./contact')),
     '/book': lazy(() => import('./book')),
-    '/reviews': lazy(() => import('./reviews')),
+    // '/reviews': lazy(() => import('./reviews')),
     '/': lazy(() => import('./home')),
 
     // Only the statically built copy of the RSS feed is intended to be opened,

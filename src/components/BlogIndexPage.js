@@ -10,7 +10,11 @@ import styles from './Styles.module.css'
 function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
   
   const pageHeadingArray=postRoutes[0].url.pathname.split("/");
-  const category = pageHeadingArray[1]=="articles"  ?"Articles" : "Blog"
+  let pageHeadingCapitalized = pageHeadingArray[1].charAt(0).toUpperCase() + pageHeadingArray[1].slice(1)
+  if(pageHeadingCapitalized=="Posts") {
+    pageHeadingCapitalized = "Blog"
+  }
+  const category = pageHeadingCapitalized;
   return (
     <div>      
      <h1 className={styles.category}>{category}</h1>
