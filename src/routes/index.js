@@ -192,10 +192,10 @@ const routes = compose(
     // root URL, with a redirect from "/page/1". Subsequent index pages are
     // mapped to "/page/n".
     '/reviewList': chunkReviewsPairs.shift()[1],
-    '/reviewPage': mount({
-      '/1': redirect((req, context) => context.blogRoot),
-      ...fromPairs(chunkReviewsPairs),
-    }),
+    // '/reviewPage': mount({
+    //   '/1': redirect((req, context) => context.blogRoot),
+    //   ...fromPairs(chunkReviewsPairs),
+    // }),
 
     // Put posts under "/posts", so that they can be wrapped with a
     // "<BlogPostLayout />" that configures MDX and adds a post-specific layout.

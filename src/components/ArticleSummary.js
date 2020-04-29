@@ -7,8 +7,8 @@ function ArticleSummary({ blogRoot, route }) {
   return (
     <article className={styles.ArticleSummary}>
       <h2><Link href={route.url.href}>{route.title}</Link></h2>
-      <ArticleMeta blogRoot={blogRoot} meta={route.data} />
-      <p>{route.data.spoiler}</p>
+      <ArticleMeta blogRoot={blogRoot} meta={route.data} byline={route.data.byline} />     
+      <p>{route.data.spoiler} <Link className={styles.more} href={route.url.href}>Read more &rarr;</Link></p>
     </article>
   )
 }

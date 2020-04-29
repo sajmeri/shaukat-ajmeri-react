@@ -4,7 +4,7 @@ import { Link } from 'react-navi'
 import { formatDate } from '../utils/formats'
 import styles from './ArticleMeta.module.css'
 
-function ArticleMeta({ blogRoot, meta, readingTime }) {
+function ArticleMeta({ blogRoot, meta, readingTime , byline}) {
   
   let readingTimeElement
   if (readingTime) {
@@ -21,6 +21,8 @@ function ArticleMeta({ blogRoot, meta, readingTime }) {
       
   return (
     <small className={styles.ArticleMeta}>
+      { byline ? byline : "" } 
+      { byline ? <span className={styles.separator}>/</span>: "" } 
       <time dateTime={meta.date.toUTCString()}>{formatDate(meta.date)}</time>
       {
         meta.tags &&

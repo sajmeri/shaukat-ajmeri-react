@@ -50,15 +50,15 @@ function BlogLayout({ blogRoot, isViewingIndex }) {
         <ul className={styles.social}>
           <li>
             <a target="_blank" href="http://www.facebook.com/shaukat.ajmeri" title="Follow me on Facebook">
-            <i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <i className="fab fa-facebook" aria-hidden="true"></i></a>
           </li>
           <li>
             <a target="_blank" href="http://twitter.com/ShaukatAjmeri" title="Follow me on Twitter">
-            <i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <i className="fab fa-twitter" aria-hidden="true"></i></a>
           </li>
           <li>
             <a target="_blank" href="http://instagram.com/shaukat.ajmeri" title="Follow me on Twitter">
-            <i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <i className="fab fa-instagram" aria-hidden="true"></i></a>
           </li>
         </ul>
         </div>
