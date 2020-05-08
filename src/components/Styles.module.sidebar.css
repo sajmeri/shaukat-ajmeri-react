@@ -4,32 +4,36 @@
     flex-flow: row wrap;
     font-weight: bold;
     text-align: center;
-}
+    /* border: 1px solid blue; */
+  }
   
   .wrapper > * {
     padding: 10px;
     flex: 1 100%;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 40rem;
-}
-
 .maincontent {
-    margin: 0 auto;
-    max-width: 40rem;
-    text-align: left;
-    margin-bottom: 2rem;
+    /* margin: 0 auto;
+    max-width: 40rem; */
+    /* padding: .5rem 1.3125rem; */
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* margin-bottom: 2rem;
+    max-width: 40rem; */
 }
 
 
-.widecontent {
-    margin: 0 auto;
-    max-width: 68rem;
-    text-align: left;
-    margin-bottom: 2rem;
-}
+@media all and (min-width: 600px) {
+    .aside { flex: 1 0 0; }
+  }
+  
+  
+@media all and (min-width: 800px) {
+    .maincontent    { flex: 3 0px; order: 1; }
+    .aside { flex: 0 0 25em; order: 2; }
+    .mainFooter  { order: 3; }
+  }
+  
 
 img.splash {
     margin-bottom: 1.5rem;
@@ -48,29 +52,14 @@ img.splash {
 }
 
 .masthead {
-    margin: 0 auto;
-    max-width: 100%;
+    /* margin: 0 auto;
+    max-width: 100%; */
     background: var(--black);
     margin-bottom: 2rem;
     padding: 1rem 0 1.5rem;
     text-align: center;
+    /* max-width: 40rem; */
 }
-
-
-@media all and (min-width: 600px) {
-    .aside { flex: 1 0 0; }
-    .asideHomepage { flex: 1 0 0; }
-  }
-  
-  
-@media all and (min-width: 800px) {
-    .maincontent  { flex: 3 0px; order: 1; }
-    .aside { flex: 0 0 25em; order: 2; }
-    .mainFooter  { order: 3; }
-
-    .asideHomepage { flex: 0 0 25em; order: 2; }
-  }
-  
 
 nav {
     margin-top: 1rem;
@@ -141,7 +130,6 @@ nav a:hover {
     letter-spacing: .04rem;
     font-size: small;
     font-weight: 200;
-    text-align: center;
 }
 
 .mainFooter ul.social {
@@ -658,4 +646,3 @@ details {
 .content :global(.token.namespace) {
     color: rgb(178, 204, 214);
 }
-

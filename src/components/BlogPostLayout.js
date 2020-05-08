@@ -8,7 +8,7 @@ function BlogPostLayout({ blogRoot }) {
   let { title, data, url } = useCurrentRoute()
   let { connect, content, head } = useView()
   let { MDXComponent, readingTime } = content
-  console.log(data);
+  
   // The content for posts is an MDX component, so we'll need
   // to use <MDXProvider> to ensure that links are rendered
   // with <Link>, and thus use pushState.

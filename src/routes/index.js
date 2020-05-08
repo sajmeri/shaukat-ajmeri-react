@@ -163,10 +163,10 @@ const routes = compose(
     // Check if the current page is an index page by comparing the remaining
     // portion of the URL's pathname with the index page paths.
     let isViewingIndex = req.path === '/' || /^\/page\/\d+$/.test(req.path)
-
+    const isPageWithNoSidbar = req.path === '/' ? true : false
     // Render the application-wide layout
     return (
-      <BlogLayout blogRoot={context.blogRoot} isViewingIndex={isViewingIndex} />
+      <BlogLayout isPageWithNoSidbar={isPageWithNoSidbar} blogRoot={context.blogRoot} isViewingIndex={isViewingIndex} />
     )
   }),
   mount({

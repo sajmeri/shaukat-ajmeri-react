@@ -11,16 +11,16 @@ import LoadingIndicator from './LoadingIndicator'
 // import styles from './BlogLayout.module.css'
 import styles from './Styles.module.css'
 
-function BlogLayout({ isPageWithNoSidbar, blogRoot, isViewingIndex }) {
+function BlogLayoutSidebar({ blogRoot, isViewingIndex }) {
   let loadingRoute = useLoadingRoute()
-  const styleName = isPageWithNoSidbar ? '' : styles.maincontent;
 
   return (
-    <div className={styles.wrapper}>      
+    <div className={styles.wrapper}>   
+        
       <header className={styles.masthead}>
         <h3 className={styles.title}>
           <Link href="/">{siteMetadata.title}</Link>
-        </h3>               
+        </h3>                
         <nav>
           <Link href="/">Home</Link> &bull;  
           <Link href="/book">Book</Link>  
@@ -29,19 +29,16 @@ function BlogLayout({ isPageWithNoSidbar, blogRoot, isViewingIndex }) {
           <Link href="/articleList">Articles</Link> 
           {/* <Link href="/tags">Tags</Link>{' '} */}
           {/* <Link href="/contact">Contact</Link>           */}
-        </nav>
+        </nav>          
       </header>  
       
-      <div className={styleName}>        
+      <div className={styles.maincontent}>        
         <NotFoundBoundary render={() => <NotFoundPage />}>
           <View />
-        </NotFoundBoundary> 
+        </NotFoundBoundary>    
             
       </div>
-      {
-        isPageWithNoSidbar ? '' :  <aside className={styles.aside}>Sidebar 1</aside>
-      }
-     
+      <aside className={styles.aside}>Aside 2</aside>
       <footer className={styles.mainFooter}>
         <div className={styles.container}>    
         <p>Get in touch: contactATshaukatajmeriDOTcom</p>    
@@ -66,4 +63,4 @@ function BlogLayout({ isPageWithNoSidbar, blogRoot, isViewingIndex }) {
   )
 }
 
-export default BlogLayout
+export default BlogLayoutSidebar
