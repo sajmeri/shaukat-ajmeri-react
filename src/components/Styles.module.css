@@ -1,13 +1,15 @@
 /* BloglayoutModule */
+
 .wrapper {
-    display: flex;  
+    display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
+    background-color: #fff;
 }
-  
-  .wrapper > * {
-    padding: 10px;
+
+.wrapper>* {
     flex: 1 100%;
 }
 
@@ -23,12 +25,10 @@
     margin-bottom: 2rem;
 }
 
-
 .widecontent {
     margin: 0 auto;
     max-width: 68rem;
     text-align: left;
-    margin-bottom: 2rem;
 }
 
 img.splash {
@@ -56,21 +56,40 @@ img.splash {
     text-align: center;
 }
 
+@media all and (min-width: 480px) {
+    .wrapper {
+        text-align: left;
+    }
+    .aside {
+        flex: 1 0 0;
+    }
+    .asideHomepage {
+        flex: 1 0 0;
+        padding: 0!important;
+        margin: 0;
+    }
+}
 
-@media all and (min-width: 600px) {
-    .aside { flex: 1 0 0; }
-    .asideHomepage { flex: 1 0 0; }
-  }
-  
-  
 @media all and (min-width: 800px) {
-    .maincontent  { flex: 3 0px; order: 1; }
-    .aside { flex: 0 0 25em; order: 2; }
-    .mainFooter  { order: 3; }
-
-    .asideHomepage { flex: 0 0 25em; order: 2; }
-  }
-  
+    .maincontent {
+        flex: 1 0;
+        order: 1;
+    }
+    .aside {
+        flex: 0 0 25em;
+        order: 2;
+    }
+    .mainFooter {
+        order: 3;
+    }
+    .asideHomepage {
+        flex: 0 0 40em;
+        order: 2;
+        margin-left: 2rem;
+        text-align: left;
+        padding: 0!important;
+    }
+}
 
 nav {
     margin-top: 1rem;
@@ -325,6 +344,11 @@ h3 {
     margin-top: 0;
 }
 
+h2.bannerHeading {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+}
+
 article h1 {
     font-size: 1.8rem;
 }
@@ -345,7 +369,7 @@ article h1 a {
 }
 
 article small,
-.byline, 
+.byline,
 .Pagination a {
     font-family: Poppins, Roboto, sans-serif;
     font-size: .8rem!important;
@@ -361,13 +385,15 @@ article small,
     margin-top: 0;
 }
 
-article small > span {
+article small>span {
     margin: 0 .5rem;
 }
+
 a.more {
     color: var(--link-color)!important;
     border: 0;
 }
+
 .caption {
     font-family: Poppins, sans-serif;
 }
@@ -658,4 +684,3 @@ details {
 .content :global(.token.namespace) {
     color: rgb(178, 204, 214);
 }
-
