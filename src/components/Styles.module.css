@@ -1,14 +1,7 @@
 /* BloglayoutModule */
+
 .wrapper {
-    display: flex;  
-    flex-flow: row wrap;
-    font-weight: bold;
-    text-align: center;
-}
-  
-  .wrapper > * {
-    padding: 10px;
-    flex: 1 100%;
+    padding: 1rem 2rem;
 }
 
 .container {
@@ -23,7 +16,6 @@
     margin-bottom: 2rem;
 }
 
-
 .widecontent {
     margin: 0 auto;
     max-width: 68rem;
@@ -35,16 +27,46 @@ img.splash {
     margin-bottom: 1.5rem;
 }
 
-.leftColumn {
-    margin: 0 auto;
-    max-width: 12rem;
-    padding: .5rem 2rem 0 0;
+section.homeIntro,
+ul.buttons,
+section.homeMiddle,
+section.homeBottom {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
-.rightColumn {
-    /* margin: 0 auto; */
-    max-width: 22rem;
-    /* padding: 2.625rem 1.3125rem; */
+section.homeBottom {
+    padding: 2rem;
+    background: var(--grey-light);
+}
+
+ul.buttons {
+    justify-content: start;
+}
+
+section.homeIntro .leftColumn {
+    flex-basis: 40%;
+}
+
+section.homeIntro .rightColumn {
+    flex-basis: 55%;
+}
+
+section.homeMiddle .leftColumn {
+    flex-basis: 60%;
+}
+
+section.homeMiddle .rightColumn {
+    flex-basis: 35%;
+}
+
+section.homeBottom .leftColumn {
+    flex-basis: 25%;
+}
+
+section.homeBottom .rightColumn {
+    flex-basis: 65%;
 }
 
 .masthead {
@@ -56,21 +78,40 @@ img.splash {
     text-align: center;
 }
 
+@media all and (max-width: 800px) {
+    section.homeIntro,
+    section.homeMiddle {
+        flex-flow: column;
+    }
+    section.homeMiddle {
+        flex-direction: column-reverse;
+    }
+    section.homeIntro .leftColumn,
+    section.homeIntro .rightColumn,
+    section.homeMiddle .leftColumn,
+    section.homeMiddle .rightColumn,
+    {
+        flex: 1 0 100%;
+    }
+}
 
-@media all and (min-width: 600px) {
-    .aside { flex: 1 0 0; }
-    .asideHomepage { flex: 1 0 0; }
-  }
-  
-  
 @media all and (min-width: 800px) {
-    .maincontent  { flex: 3 0px; order: 1; }
-    .aside { flex: 0 0 25em; order: 2; }
-    .mainFooter  { order: 3; }
-
-    .asideHomepage { flex: 0 0 25em; order: 2; }
-  }
-  
+    .maincontent {
+        flex: 3 0px;
+        order: 1;
+    }
+    .aside {
+        flex: 0 0 25em;
+        order: 2;
+    }
+    .mainFooter {
+        order: 3;
+    }
+    .asideHomepage {
+        flex: 0 0 25em;
+        order: 2;
+    }
+}
 
 nav {
     margin-top: 1rem;
@@ -267,9 +308,10 @@ img {
 }
 
 hr.spacing,
+section,
 .spacing {
     border: 0;
-    margin: 1rem 0 2rem;
+    padding: 2rem 0;
 }
 
 .blurbs {
@@ -325,6 +367,11 @@ h3 {
     margin-top: 0;
 }
 
+h2.bannerHeading {
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+}
+
 article h1 {
     font-size: 1.8rem;
 }
@@ -345,7 +392,7 @@ article h1 a {
 }
 
 article small,
-.byline, 
+.byline,
 .Pagination a {
     font-family: Poppins, Roboto, sans-serif;
     font-size: .8rem!important;
@@ -361,13 +408,15 @@ article small,
     margin-top: 0;
 }
 
-article small > span {
+article small>span {
     margin: 0 .5rem;
 }
+
 a.more {
     color: var(--link-color)!important;
     border: 0;
 }
+
 .caption {
     font-family: Poppins, sans-serif;
 }
@@ -379,6 +428,7 @@ Button style
 
 ul.buttons {
     padding-left: 0;
+    display: flex;
 }
 
 ul.buttons li {
@@ -487,23 +537,16 @@ details {
      :global body {
         font-size: 18px;
     }
-    .leftColumn {
-        margin: 0 0 1.5rem 0;
-        padding: 0;
-    }
+    .leftColumn {}
     .ArticleSummary h2,
     article h1 {
         font-size: 1.5rem;
     }
-    .container {
-        padding: 0 1rem;
+    .wrapper {
+        padding: .5rem .5rem;
     }
-    a.button {
-        margin-bottom: 1rem;
-    }
-    ul.buttons li {
-        display: block;
-        margin: 1rem 0;
+    ul.buttons {
+        justify-content: space-between;
     }
     img {
         width: 100%!important;
@@ -658,4 +701,3 @@ details {
 .content :global(.token.namespace) {
     color: rgb(178, 204, 214);
 }
-
