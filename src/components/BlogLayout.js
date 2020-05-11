@@ -13,8 +13,6 @@ import styles from './Styles.module.css'
 
 function BlogLayout({ isPageWithNoSidbar, blogRoot, isViewingIndex }) {
   let loadingRoute = useLoadingRoute()
-  const styleNameWrapper = isPageWithNoSidbar ? '' : styles.wrapper;
-  const styleNameMainContent = isPageWithNoSidbar ? '' : styles.maincontent;
   
   return (
     <div className={styles.outer}>      
@@ -33,17 +31,11 @@ function BlogLayout({ isPageWithNoSidbar, blogRoot, isViewingIndex }) {
         </nav>
       </header>  
       
-      <div className={styleNameWrapper}> 
-        <div className={styleNameMainContent}>       
+      <div className={styles.wrapper}>            
         <NotFoundBoundary render={() => <NotFoundPage />}>
           <View />
         </NotFoundBoundary> 
-        </div>
-        {
-          isPageWithNoSidbar ? '' :  <aside className={styles.aside}>Sidebar 1</aside>
-        }
-      </div>
-     
+       </div>    
      
       <footer className={styles.mainFooter}>
         <div className={styles.container}>    
