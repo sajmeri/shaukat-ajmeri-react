@@ -15,6 +15,7 @@ import { chunk, fromPairs } from 'lodash'
 import BlogIndexPage from '../components/BlogIndexPage'
 import BlogLayout from '../components/BlogLayout'
 import BlogPostLayout from '../components/BlogPostLayout'
+import ReviewsIndexPage from '../components/ReviewsIndexPage'
 import siteMetadata from '../siteMetadata'
 import posts from './posts'
 import articles from './articles'
@@ -100,7 +101,7 @@ let chunkReviewsPairs = chunksReviews.map((chunk, i) => [
     return route({
       title: pageTitle,
       view: (
-        <BlogIndexPage
+        <ReviewsIndexPage
           blogRoot={context.blogRoot}
           pageNumber={i + 1}
           pageCount={chunks.length}
