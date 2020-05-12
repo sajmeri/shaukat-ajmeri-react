@@ -1,4 +1,5 @@
 /* BloglayoutModule */
+
 .masthead {
     margin: 0 auto;
     max-width: 100%;
@@ -7,11 +8,14 @@
     padding: 1rem 0 1.5rem;
     text-align: center;
 }
+
 .wrapper {
     margin: 3rem;
 }
 
+
 /****flexbox rules for all components*****/
+
 section.homeIntro,
 ul.buttons,
 section.homeMiddle,
@@ -25,6 +29,7 @@ section.homeBottom,
 .maincontent .main {
     flex: 0 0 60%;
 }
+
 .maincontent aside {
     flex: 0 0 30%;
 }
@@ -61,9 +66,11 @@ section.homeBottom .leftColumn {
 section.homeBottom .rightColumn {
     flex-basis: 65%;
 }
+
 section {
     margin-bottom: 3rem;
 }
+
 
 /*****end flexbox*****/
 
@@ -83,8 +90,7 @@ section {
     section.homeMiddle .leftColumn,
     section.homeMiddle .rightColumn,
     .maincontent .main,
-    .maincontent aside
-    {
+    .maincontent aside {
         flex: 1 0 100%;
     }
 }
@@ -148,7 +154,6 @@ nav a:hover {
 .heading {}
 
 .mainFooter {
-    margin-top: 5rem;
     /* margin: 0 auto; */
     padding: 1.5rem 0;
     max-width: 100%;
@@ -240,7 +245,8 @@ h6 {
     letter-spacing: -.05rem;
 }
 
-h1.category, .sidebar h2 {
+h1.category,
+.sidebar h2 {
     font-family: Poppins, sans-serif!important;
     font-size: 1.5rem;
     font-weight: 200;
@@ -249,14 +255,17 @@ h1.category, .sidebar h2 {
     margin: 1rem 0 2rem 0;
     padding-bottom: .5rem;
 }
+
 .sidebar h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 3rem 0 .5rem;
     border-bottom: 1px dotted var(--grey-light);
 }
+
 .sidebar h2:first-child {
     margin: 0 0 .5rem;
 }
+
 h4 {
     font-size: 1.2rem;
     font-weight: 700;
@@ -275,6 +284,10 @@ img {
 
 .img {
     margin: 2rem 0 1.5rem;
+}
+
+img.splash {
+    margin-bottom: 1.5rem;
 }
 
 .imgLeft {
@@ -303,7 +316,8 @@ hr.spacing,
     margin-bottom: 2.5rem;
 }
 
-.blurbItem::before, .sidebar h2:before {
+.blurbItem::before,
+.sidebar h2:before {
     font-size: .8rem;
     font-style: normal;
     font-variant: normal;
