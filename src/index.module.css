@@ -71,7 +71,9 @@
     margin-top: 0;
     margin-bottom: 1.05rem;
 }
-
+:global ul {
+    padding-left: 20px;
+}
 .Welcome {
     font-size: large;
 }

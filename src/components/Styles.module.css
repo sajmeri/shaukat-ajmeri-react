@@ -1,39 +1,32 @@
 /* BloglayoutModule */
-
+.masthead {
+    margin: 0 auto;
+    max-width: 100%;
+    background: var(--black);
+    margin-bottom: 2rem;
+    padding: 1rem 0 1.5rem;
+    text-align: center;
+}
 .wrapper {
-    padding: 1rem 2rem;
+    margin: 3rem;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 40rem;
-}
-
-.maincontent {
-    margin: 0 auto;
-    max-width: 40rem;
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-.widecontent {
-    margin: 0 auto;
-    max-width: 68rem;
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-img.splash {
-    margin-bottom: 1.5rem;
-}
-
+/****flexbox rules for all components*****/
 section.homeIntro,
 ul.buttons,
 section.homeMiddle,
-section.homeBottom {
+section.homeBottom,
+.maincontent {
     display: flex;
-    flex-flow: row wrap;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.maincontent .main {
+    flex: 0 0 60%;
+}
+.maincontent aside {
+    flex: 0 0 30%;
 }
 
 section.homeBottom {
@@ -68,20 +61,19 @@ section.homeBottom .leftColumn {
 section.homeBottom .rightColumn {
     flex-basis: 65%;
 }
-
-.masthead {
-    margin: 0 auto;
-    max-width: 100%;
-    background: var(--black);
-    margin-bottom: 2rem;
-    padding: 1rem 0 1.5rem;
-    text-align: center;
+section {
+    margin-bottom: 3rem;
 }
+
+/*****end flexbox*****/
 
 @media all and (max-width: 800px) {
     section.homeIntro,
-    section.homeMiddle {
-        flex-flow: column;
+    section.homeMiddle,
+    .maincontent .main,
+    .maincontent aside {
+        flex-wrap: wrap;
+        flex-direction: column;
     }
     section.homeMiddle {
         flex-direction: column-reverse;
@@ -90,26 +82,10 @@ section.homeBottom .rightColumn {
     section.homeIntro .rightColumn,
     section.homeMiddle .leftColumn,
     section.homeMiddle .rightColumn,
+    .maincontent .main,
+    .maincontent aside
     {
         flex: 1 0 100%;
-    }
-}
-
-@media all and (min-width: 800px) {
-    .maincontent {
-        flex: 3 0px;
-        order: 1;
-    }
-    .aside {
-        flex: 0 0 25em;
-        order: 2;
-    }
-    .mainFooter {
-        order: 3;
-    }
-    .asideHomepage {
-        flex: 0 0 25em;
-        order: 2;
     }
 }
 
@@ -264,17 +240,23 @@ h6 {
     letter-spacing: -.05rem;
 }
 
-h1.category {
+h1.category, .sidebar h2 {
     font-family: Poppins, sans-serif!important;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 200;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    border-bottom: 1px dotted var(--grey-light);
     margin: 1rem 0 2rem 0;
     padding-bottom: .5rem;
 }
-
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin: 3rem 0 .5rem;
+    border-bottom: 1px dotted var(--grey-light);
+}
+.sidebar h2:first-child {
+    margin: 0 0 .5rem;
+}
 h4 {
     font-size: 1.2rem;
     font-weight: 700;
@@ -308,7 +290,6 @@ img {
 }
 
 hr.spacing,
-section,
 .spacing {
     border: 0;
     padding: 2rem 0;
@@ -322,7 +303,7 @@ section,
     margin-bottom: 2.5rem;
 }
 
-.blurbItem::before {
+.blurbItem::before, .sidebar h2:before {
     font-size: .8rem;
     font-style: normal;
     font-variant: normal;
