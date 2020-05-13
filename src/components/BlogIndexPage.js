@@ -17,9 +17,8 @@ function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
   }
   const category = pageHeadingCapitalized;
   return (
-    <div>      
+    <div className={styles.narrow}>      
      <h1 className={styles.category}>{category}</h1>
-      {/* <Bio /> */}
       <ul className={styles.articlesList}>
         {postRoutes.map(route => (
           <li key={route.url.href}>

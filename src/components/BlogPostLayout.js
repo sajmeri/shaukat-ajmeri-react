@@ -15,7 +15,7 @@ function BlogPostLayout({ blogRoot }) {
   return connect(
     <>
       {head}
-      <article>
+      <article className={styles.narrow}>
         <div>
           <h1>
             {title}

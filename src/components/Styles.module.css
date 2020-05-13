@@ -37,6 +37,7 @@ section.homeBottom,
 section.homeBottom {
     padding: 2rem;
     background: var(--grey-light);
+
 }
 
 ul.buttons {
@@ -60,11 +61,11 @@ section.homeMiddle .rightColumn {
 }
 
 section.homeBottom .leftColumn {
-    flex-basis: 25%;
+    flex-basis: 10%;
 }
 
 section.homeBottom .rightColumn {
-    flex-basis: 65%;
+    flex-basis: 80%;
 }
 
 section {
@@ -92,6 +93,9 @@ section {
     .maincontent .main,
     .maincontent aside {
         flex: 1 0 100%;
+    }
+    article.narrow {
+        margin:0;
     }
 }
 
@@ -286,7 +290,7 @@ img {
     margin: 2rem 0 1.5rem;
 }
 
-img.splash {
+.splash {
     margin-bottom: 1.5rem;
 }
 
@@ -361,7 +365,9 @@ h3 {
     margin-bottom: 1.2rem;
     margin-top: 0;
 }
-
+article {
+    
+}
 h2.bannerHeading {
     font-size: 2.6rem;
     line-height: 3.2rem;
@@ -534,8 +540,10 @@ details {
     }
     .leftColumn {}
     .ArticleSummary h2,
+    h2.bannerHeading,
     article h1 {
         font-size: 1.5rem;
+        line-height: 2rem;
     }
     .wrapper {
         padding: .5rem .5rem;
@@ -547,10 +555,9 @@ details {
         width: 100%!important;
         max-width: 100%;
         height: auto;
+        margin-bottom: 1rem;
     }
-    .panel img {
-        width: 100px!important;
-    }
+
     .imgLeft,
     .imgRight {
         float: none;
@@ -695,4 +702,8 @@ details {
 
 .content :global(.token.namespace) {
     color: rgb(178, 204, 214);
+}
+
+.narrow {
+    margin: 0 10rem;
 }
