@@ -37,7 +37,6 @@ section.homeBottom,
 section.homeBottom {
     padding: 2rem;
     background: var(--grey-light);
-
 }
 
 ul.buttons {
@@ -74,30 +73,6 @@ section {
 
 
 /*****end flexbox*****/
-
-@media all and (max-width: 800px) {
-    section.homeIntro,
-    section.homeMiddle,
-    .maincontent .main,
-    .maincontent aside {
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-    section.homeMiddle {
-        flex-direction: column-reverse;
-    }
-    section.homeIntro .leftColumn,
-    section.homeIntro .rightColumn,
-    section.homeMiddle .leftColumn,
-    section.homeMiddle .rightColumn,
-    .maincontent .main,
-    .maincontent aside {
-        flex: 1 0 100%;
-    }
-    article.narrow {
-        margin:0;
-    }
-}
 
 nav {
     margin-top: 1rem;
@@ -365,9 +340,9 @@ h3 {
     margin-bottom: 1.2rem;
     margin-top: 0;
 }
-article {
-    
-}
+
+article {}
+
 h2.bannerHeading {
     font-size: 2.6rem;
     line-height: 3.2rem;
@@ -545,19 +520,12 @@ details {
         font-size: 1.5rem;
         line-height: 2rem;
     }
-    .wrapper {
-        padding: .5rem .5rem;
-    }
-    ul.buttons {
-        justify-content: space-between;
-    }
     img {
         width: 100%!important;
         max-width: 100%;
         height: auto;
         margin-bottom: 1rem;
     }
-
     .imgLeft,
     .imgRight {
         float: none;
@@ -573,32 +541,44 @@ details {
     }
 }
 
-
-/* Tablet Styles */
-
-@media only screen and (min-width: 401px) and (max-width: 960px) {
-    body {}
+@media all and (max-width: 768px) {
+    section.homeIntro,
+    section.homeMiddle,
+    .maincontent .main,
+    .maincontent aside {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    section.homeMiddle {
+        flex-direction: column-reverse;
+    }
+    section.homeIntro .leftColumn,
+    section.homeIntro .rightColumn,
+    section.homeMiddle .leftColumn,
+    section.homeMiddle .rightColumn,
+    .maincontent .main,
+    .maincontent aside {
+        flex: 1 0 100%;
+    }
+    section.homeBottom .leftColumn {
+        flex-basis: 30%;
+    }
+    section.homeBottom .rightColumn {
+        flex-basis: 60%;
+    }
+    section {
+        margin-bottom: 1rem;
+    }
+    ul.buttons {
+        justify-content: start;
+    }
+    article.narrow {
+        margin: 0;
+    }
+    .wrapper {
+        margin: 1rem;
+    }
 }
-
-
-/* Desktop Styles */
-
-@media only screen and (min-width: 961px) {
-    body {}
-}
-
-
-/* @media only screen and (max-width: 480px) {
-  .leftColumn {
-      width: 30rem;
-    }
-    .rightColumn {
-      margin-top: 2rem;
-    }
-    nav a {
-      margin-right:1rem;
-    }
-} */
 
 
 /*styles from original css*/
